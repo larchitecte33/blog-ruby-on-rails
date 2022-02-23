@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  designation: MyString
+  quantite: 1
+  prix_unitaire: 1.5
+  prix_ttc: 1.5
+
+two:
+  designation: MyString
+  quantite: 1
+  prix_unitaire: 1.5
+  prix_ttc: 1.5

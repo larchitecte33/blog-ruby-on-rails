@@ -1,0 +1,42 @@
+<h1>Création compte</h1>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <!-- pluralize(nb, mot) : fonction qui regarde si nb est supérieur à 1
+             et qui renvoie mot au pluriel ou au singulier suivant le cas
+        -->
+        <%= pluralize(@user.errors.count, "erreur") %> a empêché ce compte
+          utilisateur d'être créé :
+      </h2>
+      
+      <ul>
+        <% @user.error.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :nom %><br>
+    <%= f.text_field :nom %>
+  </p>
+ 
+  <p>
+    <%= f.label :profession %><br>
+    <%= f.text_field :profession %>
+  </p>
+  
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+  
+<%= link_to 'Retour', articles_path %>
